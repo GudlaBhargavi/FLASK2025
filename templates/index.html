@@ -91,7 +91,10 @@
                     <td>{{todo.title}}</td>
                     <td>{{todo.desc}}</td>
                     <td>{{todo.date_created}}</td>
-                    <td><a href="/Delete/{{todo.sno}}<button type="button" class="btn btn-dark">Delete</button></td>
+                    <td>
+                        <a href="/delete/{{todo.sno}}<button type="button" class="btn btn-dark">Delete</button>
+                        <a href="/delete/{{todo.sno}}<button type="button" class="btn btn-dark">Delete</button>
+                    </td>
                   </tr>
                 {%endfor %}
               
