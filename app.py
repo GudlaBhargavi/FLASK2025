@@ -36,5 +36,18 @@ def products():
     print(allTodo)
     return 'This is the products page'
 
+@app.route('/show')
+def products():
+    allTodo = Todo.query.all()
+    print(allTodo)
+    return 'This is the products page'
+
+@app.route('/show')
+def products():
+    allTodo = Todo.query.all()
+    print(allTodo)
+    return 'This is the products page'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
