@@ -35,7 +35,7 @@ def products():
     print(allTodo)
     return 'This is the products page'
 
-@app.route('/show')
+@app.route('/update')
 def products():
     allTodo = Todo.query.all()
     print(allTodo)
