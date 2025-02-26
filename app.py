@@ -36,13 +36,13 @@ def products():
     return 'This is the products page'
 
 @app.route('/update')
-def products():
+def update():
     allTodo = Todo.query.all()
     print(allTodo)
     return 'This is the products page'
 
 @app.route('/delete')
-def products():
+def delete():
     allTodo = Todo.query.all()
     print(allTodo)
     return 'This is the products page'
