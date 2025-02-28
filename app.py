@@ -35,19 +35,17 @@ def products():
     print(allTodo)
     return 'This is the products page'
 
-@app.route('/update/<int:sno>')
+@app.route('/update/<int:sno>', methods=['GET', 'POST'])
 def update(sno):
-    if request.method=='POST':
-        title = request.form['title']
-        desc = request.form['desc']
-        todo = Todo.query.filter_by(sno=sno).first()
-        todo.title=title 
-        todo.desc=desc
-        db.session.add(todo)
-        db.session.commit()
-
     todo = Todo.query.filter_by(sno=sno).first()
-    return render_template('update.html',todo=todo)
+    if request.method == 'POST':
+        todo.title = request.form['title']
+        todo.desc = request.form['desc']
+        db.session.commit()
+        return redirect("/")  # Redirect after updating
+
+    return render_template('update.html', todo=todo)
+
     
 
 @app.route('/delete/<int:sno>')
