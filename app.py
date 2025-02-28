@@ -39,11 +39,7 @@ def products():
 def update(sno):
     todo = Todo.query.filter_by(sno=sno).first()
     return render_template('update.html',todo=todo)
-    if todo:
-        db.session.delete(todo)
-        db.session.commit()
-    return redirect("/")
-
+    
 
 @app.route('/delete/<int:sno>')
 def delete(sno):
