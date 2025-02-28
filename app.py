@@ -37,6 +37,7 @@ def products():
 
 @app.route('/update/<int:sno>')
 def update(sno):
+    if request.method=='POST':
     todo = Todo.query.filter_by(sno=sno).first()
     return render_template('update.html',todo=todo)
     
